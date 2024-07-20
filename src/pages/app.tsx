@@ -6,9 +6,10 @@ import WordRotate from "@/components/ui/word-rotate.tsx";
 import {Drawer, DrawerContent, DrawerHeader, DrawerTrigger} from "@/components/ui/drawer.tsx";
 import {errorNotification, successNotification} from "@/components/notification/notification.ts";
 import {useMessages} from "@/pages/use-messages.ts";
+import {addMessage} from "@/pages/message-service.ts";
 
 function App() {
-    const {messages} = useMessages();
+    const {messages, fetchMessages} = useMessages();
     const [loading, setLoading] = useState<boolean>(false);
     const [name, setName] = useState<string>("");
     const [message, setMessage] = useState<string>("");
@@ -27,14 +28,24 @@ function App() {
                 "Please enter your message"
             );
         }else {
-            successNotification(
-                "Message added",
-                "Message added successfully."
-            );
-            setName('');
-            setMessage('');
+            const request = {
+                name: name,
+                message: message,
+                icon: "me",
+                time: new Date(),
+            };
+            addMessage(request).then(() => {
+                successNotification(
+                    "Message added",
+                    "Message added successfully."
+                );
+                fetchMessages();
+                setName('');
+                setMessage('');
+            }).finally(() => {
+                setLoading(false);
+            });
         }
-        setLoading(false);
     }
 
     return (

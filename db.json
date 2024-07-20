@@ -1,28 +1,11 @@
 {
   "messages": [
     {
-      "name": "Payment received",
-      "message": "Magic UI",
-      "time": "15m ago",
-      "icon": "💸"
-    },
-    {
-      "name": "User signed up",
-      "message": "Magic UI",
-      "time": "10m ago",
-      "icon": "👤"
-    },
-    {
-      "name": "New message",
-      "message": "Magic UI",
-      "time": "5m ago",
-      "icon": "💬"
-    },
-    {
-      "name": "New event",
-      "message": "Magic UI",
-      "time": "2m ago",
-      "icon": "🗞️"
+      "id": "389d",
+      "name": "Moalosi ",
+      "message": "Moalosi",
+      "icon": "me",
+      "time": "2024-07-20T13:39:22.836Z"
     }
   ]
 }

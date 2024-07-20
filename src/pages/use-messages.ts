@@ -17,6 +17,7 @@ export const useMessages = () => {
     }, []);
 
     return {
-        messages
+        messages,
+        fetchMessages,
     }
 }

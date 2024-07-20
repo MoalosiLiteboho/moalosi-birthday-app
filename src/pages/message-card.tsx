@@ -4,7 +4,7 @@ export type MessageType = {
     name: string;
     message: string;
     icon: string;
-    time: string;
+    time: Date;
 }
 
 export type MessageCardProps = MessageType & {
@@ -18,7 +18,7 @@ export default function MessageCard({message, name, icon, time}: MessageCardProp
             <CardHeader>
                 <User
                     name={name}
-                    description={time}
+                    description={time.toString()}
                     avatarProps={{
                         name: `${icon}`,
                         isBordered: true,
