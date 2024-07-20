@@ -1,41 +1,14 @@
 import {useState} from "react";
 import {Button, Input} from "@nextui-org/react";
 import {AnimatedList} from "@/components/ui/animated-list.tsx";
-import MessageCard, {MessageType} from "@/pages/message-card.tsx";
+import MessageCard from "@/pages/message-card.tsx";
 import WordRotate from "@/components/ui/word-rotate.tsx";
 import {Drawer, DrawerContent, DrawerHeader, DrawerTrigger} from "@/components/ui/drawer.tsx";
 import {errorNotification, successNotification} from "@/components/notification/notification.ts";
-
-const notifications: MessageType[] = [
-    {
-        name: "Payment received",
-        message: "Magic UI",
-        time: "15m ago",
-
-        icon: "💸",
-    },
-    {
-        name: "User signed up",
-        message: "Magic UI",
-        time: "10m ago",
-        icon: "👤",
-    },
-    {
-        name: "New message",
-        message: "Magic UI",
-        time: "5m ago",
-        icon: "💬",
-    },
-    {
-        name: "New event",
-        message: "Magic UI",
-        time: "2m ago",
-        icon: "🗞️",
-    },
-];
+import {useMessages} from "@/pages/use-messages.ts";
 
 function App() {
-    const [messages, setMessages] = useState<MessageType[]>([]);
+    const {messages} = useMessages();
     const [loading, setLoading] = useState<boolean>(false);
     const [name, setName] = useState<string>("");
     const [message, setMessage] = useState<string>("");
@@ -43,7 +16,6 @@ function App() {
 
     const handleSubmit = () => {
         setLoading(true);
-        setMessages(notifications);
         if(!name) {
             errorNotification(
                 "Name is Empty",
@@ -55,14 +27,6 @@ function App() {
                 "Please enter your message"
             );
         }else {
-            const newMessage: MessageType = {
-                name: name,
-                message: message,
-                icon: "🤡",
-                time: new Date().toISOString()
-            };
-
-            messages.push(newMessage);
             successNotification(
                 "Message added",
                 "Message added successfully."
