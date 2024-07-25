@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Button, Input} from "@nextui-org/react";
+import {Button, Input, Modal, ModalContent, ModalHeader, useDisclosure} from "@nextui-org/react";
 import {AnimatedList} from "@/components/ui/animated-list.tsx";
 import MessageCard from "@/pages/message-card.tsx";
 import WordRotate from "@/components/ui/word-rotate.tsx";
@@ -9,6 +9,8 @@ import {useMessages} from "@/pages/use-messages.ts";
 import {addMessage} from "@/pages/message-service.ts";
 
 function App() {
+    const [open, setOpen] = useState<boolean>(false);
+    const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const {messages, fetchMessages} = useMessages();
     const [loading, setLoading] = useState<boolean>(false);
     const [name, setName] = useState<string>("");
@@ -44,6 +46,8 @@ function App() {
                 setMessage('');
             }).finally(() => {
                 setLoading(false);
+                if(isOpen) onOpenChange();
+                if(open) setOpen(!open);
             });
         }
     }
@@ -63,11 +67,12 @@ function App() {
                         variant="shadow"
                         color="success"
                         className="text-white hidden lg:flex"
+                        onPress={onOpen}
                     >
                         Write Message for Me
                     </Button>
-                    <Drawer>
-                        <DrawerTrigger asChild>
+                    <Drawer open={open}>
+                        <DrawerTrigger asChild onClick={() => setOpen(!open)}>
                             <Button
                                 variant="shadow"
                                 color="success"
@@ -112,6 +117,48 @@ function App() {
                             </div>
                         </DrawerContent>
                     </Drawer>
+                    <Modal
+                        isOpen={isOpen}
+                        onOpenChange={onOpenChange}
+                    >
+                        <ModalContent className="p-5">
+                            <>
+                                <ModalHeader className="w-full mb-2 font-light text-xl">
+                                    <h1 className="text-center w-full">Wish Me Happy Birthday</h1>
+                                </ModalHeader>
+                                <div className="flex flex-col gap-y-4">
+                                    <Input
+                                        type="text"
+                                        label="Name"
+                                        placeholder="Enter your name"
+                                        labelPlacement="outside"
+                                        variant="bordered"
+                                        value={name}
+                                        onValueChange={setName}
+                                    />
+                                    <Input
+                                        type="text"
+                                        label="Message"
+                                        placeholder="Enter your message"
+                                        labelPlacement="outside"
+                                        variant="bordered"
+                                        value={message}
+                                        onValueChange={setMessage}
+                                    />
+                                    <center>
+                                        <Button
+                                            variant="shadow"
+                                            color="primary"
+                                            isLoading={loading}
+                                            onPress={handleSubmit}
+                                        >
+                                            Submit
+                                        </Button>
+                                    </center>
+                                </div>
+                            </>
+                        </ModalContent>
+                    </Modal>
                 </div>
                 <div className="h-screen w-full flex justify-center">
                     <div className="h-full w-full max-w-[26em]">
