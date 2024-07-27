@@ -1,6 +1,7 @@
 import {Card, CardBody, CardHeader, User} from "@nextui-org/react";
 
 export type MessageType = {
+    id: number;
     name: string;
     message: string;
     icon: string;

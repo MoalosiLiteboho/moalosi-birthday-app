@@ -1,52 +1,60 @@
 {
   "messages": [
     {
-      "id": "6a68",
-      "name": "sdfskjfksj",
-      "message": "kfjdskljfkdj",
-      "icon": "👀",
-      "time": "July 26, 2024 - 12:13",
-      "color": "primary"
+      "id": "def4",
+      "name": "Kananelo Leotla",
+      "message": "Happiest birthday sweetheart",
+      "icon": "🌹",
+      "time": "July 27, 2024 - 08:02",
+      "color": "secondary"
     },
     {
-      "id": "2597",
-      "name": "fjksjfkj",
-      "message": "fjskj",
-      "icon": "🐶",
-      "time": "July 26, 2024 - 12:15",
-      "color": "primary"
+      "id": "ea8f",
+      "name": "Tlalane G. Mantsoe",
+      "message": "Happy birthday, Genie!🎉",
+      "icon": "💌",
+      "time": "July 27, 2024 - 08:05",
+      "color": "default"
     },
     {
-      "id": "dbc1",
-      "name": "djfsjjj",
-      "message": "kjskdjfkj",
-      "icon": "🐶",
-      "time": "July 26, 2024 - 12:15",
-      "color": "danger"
+      "id": "7920",
+      "name": "Palesa Mbally",
+      "message": "Happy escape womb day abutii🎂🎊🎈🥳",
+      "icon": "🥳",
+      "time": "July 27, 2024 - 08:08",
+      "color": "default"
     },
     {
-      "id": "91c4",
-      "name": "jfkdsjfkj",
-      "message": "fjksjkfj",
-      "icon": "👻",
-      "time": "July 26, 2024 - 12:19",
-      "color": "danger"
-    },
-    {
-      "id": "c5e8",
-      "name": "fjskjfkj",
-      "message": "jfsdjfj",
-      "icon": "👀",
-      "time": "July 26, 2024 - 12:19",
+      "id": "ab50",
+      "name": "Makatiso Makoloane Moalosi",
+      "message": "Happy birthday, Genie 🎉",
+      "icon": "💫",
+      "time": "July 27, 2024 - 08:09",
       "color": "warning"
     },
     {
-      "id": "6b53",
-      "name": "jfskjfj",
-      "message": "kfskfjkj",
-      "icon": "🐱",
-      "time": "July 26, 2024 - 12:20",
-      "color": "warning"
+      "id": "5c41",
+      "name": "Matsoane Moalosi",
+      "message": "Abuti. Happy Birthday",
+      "icon": "🙏",
+      "time": "July 27, 2024 - 08:24",
+      "color": "secondary"
+    },
+    {
+      "id": "d7b1",
+      "name": "Bruh Saxtch",
+      "message": "Happy birthday Bafana, O hole hamonate",
+      "icon": "🥳",
+      "time": "July 27, 2024 - 08:39",
+      "color": "primary"
+    },
+    {
+      "id": "b71d",
+      "name": "Moalosi Liteboho",
+      "message": "Thank you everyone for your kind words that warm my heart. I am very blessed to have you guy. Thank you a lot.",
+      "icon": "💌",
+      "time": "July 27, 2024 - 09:46",
+      "color": "primary"
     }
   ]
 }

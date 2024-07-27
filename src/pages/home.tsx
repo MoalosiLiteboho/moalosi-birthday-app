@@ -21,7 +21,7 @@ function Home() {
         'July', 'August', 'September', 'October', 'November', 'December'
     ];
     const sentences = ["Kea Hola", "It's my Birthday"];
-    const emojis = ['🐶', '🐱', '👻', '🎉', '👀'];
+    const emojis = ['❤️‍🔥', '💌', '🥳', '🎉', '💞', '💫', '🙏', '🫂', '🌹', '🌍'];
 
     const handleInputValidation = (): boolean => {
         if(!name) {
@@ -205,9 +205,9 @@ function Home() {
                 <div className="h-screen w-full flex justify-center">
                     <div className="h-full w-full max-w-[26em]">
                         <AnimatedList>
-                            {messages.map((item, index) => (
+                            {messages.map((item) => (
                                 <MessageCard
-                                    key={index}
+                                    key={item.id}
                                     {...item}
                                 />
                             ))}
