@@ -3,12 +3,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {NextUIProvider} from "@nextui-org/react";
 import {Toaster} from "sonner";
-import App from "@/pages/app.tsx";
+import Home from "@/pages/home.tsx";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <NextUIProvider>
-            <App />
+            <Home />
             <Toaster
                 richColors
                 position='bottom-center'

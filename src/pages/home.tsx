@@ -8,48 +8,90 @@ import {errorNotification, successNotification} from "@/components/notification/
 import {useMessages} from "@/pages/use-messages.ts";
 import {addMessage} from "@/pages/message-service.ts";
 
-function App() {
+function Home() {
     const [open, setOpen] = useState<boolean>(false);
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const {messages, fetchMessages} = useMessages();
     const [loading, setLoading] = useState<boolean>(false);
     const [name, setName] = useState<string>("");
     const [message, setMessage] = useState<string>("");
+    const colors = ["primary", "secondary", "danger", "success", "default", "warning"];
+    const months = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+    ];
     const sentences = ["Kea Hola", "It's my Birthday"];
+    const emojis = ['🐶', '🐱', '👻', '🎉', '👀'];
 
-    const handleSubmit = () => {
-        setLoading(true);
+    const handleInputValidation = (): boolean => {
         if(!name) {
             errorNotification(
                 "Name is Empty",
                 "Please enter your name"
             );
+            return false;
         }else if(!message) {
             errorNotification(
                 "Message is Empty",
                 "Please enter your message"
             );
-        }else {
+            return false;
+        } else return true;
+    }
+
+    const handleSubmit = () => {
+        setLoading(true);
+
+        if(!handleInputValidation()) setLoading(false);
+        else {
             const request = {
                 name: name,
                 message: message,
-                icon: "me",
-                time: new Date(),
+                icon: getEmoji(),
+                time: getDate(),
+                color: getColor()
             };
             addMessage(request).then(() => {
                 successNotification(
                     "Message added",
                     "Message added successfully."
                 );
-                fetchMessages();
-                setName('');
-                setMessage('');
+                handleSuccess();
             }).finally(() => {
                 setLoading(false);
-                if(isOpen) onOpenChange();
-                if(open) setOpen(!open);
             });
         }
+    }
+
+    const handleSuccess = () => {
+        fetchMessages();
+        setName('');
+        setMessage('');
+        if(isOpen) onOpenChange();
+        if(open) setOpen(!open);
+    }
+
+    const getDate = () => {
+        const currentDate = new Date();
+
+        const month = currentDate.getMonth();
+        const day = currentDate.getDate();
+        const year = currentDate.getFullYear()
+
+        const hours = currentDate.getHours().toString().padStart(2, "0");
+        const minutes = currentDate.getMinutes().toString().padStart(2, "0");
+
+        return `${months[month]} ${day}, ${year} - ${hours}:${minutes}`;
+    }
+
+    const getEmoji = () => {
+        const index = Math.floor(Math.random() * emojis.length);
+        return emojis[index];
+    }
+
+    const getColor = () => {
+        const index = Math.floor(Math.random() * colors.length);
+        return colors[index];
     }
 
     return (
@@ -178,4 +220,4 @@ function App() {
     );
 }
 
-export default App
+export default Home

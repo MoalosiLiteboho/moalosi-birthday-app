@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {MessageType} from "@/pages/message-card.tsx";
 
 export const getAllMessages = async () => {
     return await axios.get(
@@ -7,7 +6,7 @@ export const getAllMessages = async () => {
     );
 }
 
-export const addMessage = async (request: MessageType) => {
+export const addMessage = async (request: unknown) => {
     return await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/messages`,
         request,

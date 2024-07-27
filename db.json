@@ -1,5 +1,52 @@
 {
   "messages": [
-
+    {
+      "id": "6a68",
+      "name": "sdfskjfksj",
+      "message": "kfjdskljfkdj",
+      "icon": "👀",
+      "time": "July 26, 2024 - 12:13",
+      "color": "primary"
+    },
+    {
+      "id": "2597",
+      "name": "fjksjfkj",
+      "message": "fjskj",
+      "icon": "🐶",
+      "time": "July 26, 2024 - 12:15",
+      "color": "primary"
+    },
+    {
+      "id": "dbc1",
+      "name": "djfsjjj",
+      "message": "kjskdjfkj",
+      "icon": "🐶",
+      "time": "July 26, 2024 - 12:15",
+      "color": "danger"
+    },
+    {
+      "id": "91c4",
+      "name": "jfkdsjfkj",
+      "message": "fjksjkfj",
+      "icon": "👻",
+      "time": "July 26, 2024 - 12:19",
+      "color": "danger"
+    },
+    {
+      "id": "c5e8",
+      "name": "fjskjfkj",
+      "message": "jfsdjfj",
+      "icon": "👀",
+      "time": "July 26, 2024 - 12:19",
+      "color": "warning"
+    },
+    {
+      "id": "6b53",
+      "name": "jfskjfj",
+      "message": "kfskfjkj",
+      "icon": "🐱",
+      "time": "July 26, 2024 - 12:20",
+      "color": "warning"
+    }
   ]
 }
